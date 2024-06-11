@@ -1,0 +1,10 @@
+<article class="c-information-container-component">
+  <div class="line" [ngClass]="getColorClass()"></div>
+  <span class="c-inf">
+    <h1 [ngClass]="information.color">{{ information.title }}</h1>
+    <p>{{ information.value }}</p>
+  </span>
+  <span class="c-icon">
+    <mat-icon>calendar_month</mat-icon>
+  </span>
+</article>

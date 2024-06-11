@@ -1,0 +1,72 @@
+@import "../../../../shared/styles/sidebar.scss";
+@import "../../../../shared/styles/header.scss";
+
+@import "../../../../shared/styles/transition.scss";
+@import "../../../../shared/styles/flex-mixin.scss";
+@import "../../../../shared/styles/variables.scss";
+
+.header-container {
+  position: absolute;
+  width: calc(100% - $sidebar-open-width);
+  left: $sidebar-open-width;
+  height: $header-height;
+  @include box-shadow();
+  top: 0;
+  background-color: white;
+  @include transition();
+  nav {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include insert-flex("space-between");
+    .field-search {
+      position: relative;
+      margin-left: $padding-big;
+      top: 11px;
+    }
+    .field-options {
+      .c-avatar {
+        @include insert-flex();
+        cursor: pointer;
+        hr {
+          position: relative;
+          height: 40px;
+          width: 1px;
+          margin: 0 $padding-big;
+          background-color: $color-line-default;
+        }
+        .c-user-name {
+          color: #858796;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .c-avatar {
+          img {
+            display: none;
+          }
+          .c-user-name {
+            display: none;
+          }
+        }
+        .icon-face {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.retract-header {
+  width: calc(100% - $sidebar-close-width);
+  left: $sidebar-close-width;
+}
+
+.icon-face {
+  font-size: toRem(32);
+  width: toRem(32);
+  height: toRem(32);
+  margin-right: $padding-big;
+  color: rgb(85, 85, 85);
+  margin-left: toRem(16);
+}

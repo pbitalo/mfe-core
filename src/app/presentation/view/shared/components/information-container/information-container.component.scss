@@ -1,0 +1,91 @@
+@import "../../styles/flex-mixin.scss";
+@import "../../styles/box-shadow.scss";
+@import "../../styles/convert-px-to-rem.scss";
+@import "../../styles/variables.scss";
+
+$icon-lenght: toRem(31);
+$radius: toRem(10);
+
+.c-information-container-component {
+  position: relative;
+  @include insert-flex();
+  width: toRem(305);
+  height: toRem(100);
+  border-radius: $radius;
+  @include box-shadow();
+  margin: 0 toRem(16) toRem(30) toRem(16);
+  padding: toRem(16);
+  .c-inf {
+    position: relative;
+    width: calc(100% - $icon-lenght);
+    height: 100%;
+    h1,
+    p {
+      margin: 0;
+    }
+    h1 {
+      font-size: toRem(16);
+      font-weight: 500;
+      margin-bottom: toRem(16);
+    }
+    p {
+      color: #5a5c69;
+      font-weight: 600;
+      font-size: toRem(18);
+    }
+  }
+  .c-icon {
+    @include insert-flex();
+    position: relative;
+    width: $icon-lenght;
+    height: 100%;
+    mat-icon {
+      width: 34px;
+      font-size: 34px;
+      height: 34px;
+      color: #dddfeb;
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  height: 100%;
+  width: toRem(5);
+  left: 0;
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-color: transparent;
+}
+
+.c-blue {
+  background-color: $color-blue-default;
+}
+
+.blue {
+  color: $color-blue-default;
+}
+
+.c-green {
+  background-color: $color-green;
+}
+
+.green {
+  color: $color-green;
+}
+
+.c-green-light {
+  background-color: $color-dark-green;
+}
+
+.green-light {
+  color: $color-dark-green;
+}
+
+.c-yellow {
+  background-color: $color-orange-warning;
+}
+
+.yellow {
+  color: $color-orange-warning;
+}

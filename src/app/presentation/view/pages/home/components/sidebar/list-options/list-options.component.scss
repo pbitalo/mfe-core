@@ -1,0 +1,143 @@
+@import "../../../../../shared/styles/flex-mixin.scss";
+@import "../../../../../shared/styles/transition.scss";
+@import "../../../../../shared/styles/variables.scss";
+
+$icon-center: 3px;
+
+.c-options {
+  position: relative;
+  width: 100%;
+  @include insert-flex("center", "flex-start");
+  flex-direction: column;
+  margin-bottom: toRem(16);
+  .c-item {
+    position: relative;
+    width: 100%;
+    @include insert-flex("space-between");
+    padding: 8px 0;
+    cursor: pointer;
+    .icon-row {
+      @include transition();
+    }
+    .move-icon {
+      transform: rotateZ(90deg);
+    }
+    span {
+      @include insert-flex();
+    }
+    label {
+      margin-left: toRem(8);
+    }
+    span:first-child {
+      .c-label-auto {
+        @include transition();
+      }
+    }
+  }
+  label {
+    color: $color-text-secundary;
+  }
+  .c-list {
+    span:hover {
+      background-color: rgb(242, 242, 242);
+    }
+  }
+  .c-list {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    @include insert-flex("flex-start");
+    @include transition();
+    flex-direction: column;
+    background-color: white;
+    padding: 0;
+    color: black;
+    overflow: hidden;
+    label {
+      width: calc(100% - 16px);
+      color: rgb(110, 110, 110);
+      text-align: left;
+      padding: 0 8px;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+    @media (max-width: $break-point) {
+      label {
+        text-align: center;
+      }
+    }
+    span {
+      position: relative;
+      width: calc(100% - 16px);
+      padding: 2px 8px;
+      margin-bottom: 4px;
+      @include transition();
+      cursor: pointer;
+    }
+    .c-list-item {
+      @include insert-flex();
+      span:first-child {
+        @include insert-flex("flex-start");
+        white-space: nowrap;
+        mat-icon {
+          margin-right: 8px;
+          font-size: 24px;
+          height: 24px;
+          min-width: 24px;
+          color: rgb(60, 60, 60);
+        }
+      }
+      .c-option-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.c-options:hover {
+  .c-item {
+    span:first-child {
+      .c-label-auto {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.icon-sidebar {
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  color: white;
+}
+
+@media (max-width: $break-point) {
+  :is(.c-label-auto, .c-description) {
+    display: none !important;
+  }
+
+  .c-option-name {
+    display: none !important;
+  }
+
+  .c-list-item {
+    span {
+      mat-icon {
+        position: relative;
+        left: $icon-center;
+      }
+    }
+  }
+}
+
+.center-icons {
+  span {
+    mat-icon {
+      position: relative;
+      left: $icon-center;
+    }
+  }
+}

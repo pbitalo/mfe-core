@@ -1,0 +1,18 @@
+@import "../../shared/styles/sidebar.scss";
+@import "../../shared/styles/header.scss";
+@import "../../shared/styles/transition.scss";
+
+.c-main {
+  position: absolute;
+  left: $sidebar-open-width;
+  top: $header-height;
+  width: calc(100% - $sidebar-open-width);
+  height: calc(100% - $header-height);
+  overflow: auto;
+  @include transition();
+}
+
+.retract-c-main {
+  left: $sidebar-close-width;
+  width: calc(100% - $sidebar-close-width);
+}
