@@ -1,0 +1,53 @@
+<aside class="sidebar-container" [ngClass]="{ 'retract-sidebar': isOpen }">
+  <nav>
+    <header class="sidebar-header">
+      <mat-icon
+        (click)="toogleSidebar()"
+        class="icon"
+        matTooltip="Clique para expandir/retrair"
+        [ngClass]="{ 'move-icon': isOpen }"
+        >menu</mat-icon
+      >
+    </header>
+
+    <section class="sidebar-menu">
+      <article>
+        <ul>
+          <li *ngFor="let item of _sectorFilter">
+            <div class="c-sector">
+              <span *ngIf="!isOpen" class="c-description">
+                {{ item.name }}
+              </span>
+              <app-list-options
+                *ngIf="item.options"
+                [name]="'Automações'"
+                [icon]="item.icon"
+                [list]="item.options"
+                [item]="item"
+              >
+              </app-list-options>
+
+              <app-list-options
+                *ngIf="item.setting"
+                [name]="'Configurações'"
+                [icon]="item.icon"
+                [list]="item.setting"
+                [item]="item"
+              >
+              </app-list-options>
+
+              <app-list-options
+                *ngIf="item.tests"
+                [name]="'Testes'"
+                [icon]="item.icon"
+                [list]="item.tests"
+                [item]="item"
+              >
+              </app-list-options>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </nav>
+</aside>

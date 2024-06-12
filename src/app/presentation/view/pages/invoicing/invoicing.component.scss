@@ -1,0 +1,54 @@
+@import "../../shared/styles/flex-mixin.scss";
+@import "../../shared/styles/variables.scss";
+
+.c-main-body {
+  position: relative;
+  width: calc(100% - toRem(48));
+  width: calc(100% - toRem(48));
+  padding: toRem(24);
+  .c-title {
+    position: relative;
+    width: 100%;
+    height: auto;
+    @include insert-flex("space-between");
+    margin-bottom: 24px;
+    h1 {
+      color: #5a5c69;
+      font-size: $font-size-big;
+      font-weight: 500;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .c-content {
+    .c-information {
+      padding: toRem(16);
+      ul {
+        position: relative;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        @include insert-flex("space-between");
+        flex-wrap: wrap;
+        li {
+        }
+      }
+    }
+  }
+}
+
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+  @include insert-flex("flex-start");
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}

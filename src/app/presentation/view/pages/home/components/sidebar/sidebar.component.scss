@@ -1,0 +1,75 @@
+@import "../../../../shared/styles/variables.scss";
+
+@import "../../../../shared/styles/sidebar.scss";
+@import "../../../../shared/styles/header.scss";
+
+@import "../../../../shared/styles/box-shadow.scss";
+@import "../../../../shared/styles/flex-mixin.scss";
+@import "../../../../shared/styles/transition.scss";
+
+.sidebar-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $sidebar-open-width;
+  background-color: $color-blue-default;
+  height: 100vh;
+  @include box-shadow();
+  z-index: 1;
+  @include transition();
+
+  .sidebar-header {
+    height: $header-height;
+    @include insert-flex();
+    border-bottom: $line-default;
+    margin: 0 toRem(16);
+  }
+
+  .sidebar-menu {
+    position: relative;
+    height: calc(100vh - 76px);
+    overflow: auto;
+    ul {
+      list-style: none;
+      padding: 0 16px;
+      li {
+        .c-sector {
+          border-bottom: $line-default;
+          position: relative;
+          @include insert-flex("center", "flex-start");
+          flex-direction: column;
+          margin-bottom: toRem(24);
+          width: 100%;
+          .c-description {
+            @include insert-flex();
+            width: 100%;
+            color: rgb(220, 220, 220);
+            text-transform: uppercase;
+          }
+          app-list-options {
+            position: relative;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.retract-sidebar {
+  width: $sidebar-close-width;
+}
+
+.move-icon {
+  transform: rotateZ(90deg);
+}
+
+@media (max-width: $break-point) {
+  .icon {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .c-description {
+    display: none !important;
+  }
+}
