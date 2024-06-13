@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { HomeBase } from '../../home-base';
 import { SectorName } from 'src/app/domain/enums/sidebar-enum';
+import { Sectors } from '@entities/sector-entity';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,8 +16,10 @@ export class SidebarComponent extends HomeBase {
   override ngOnInit(): void {
     super.ngOnInit();
     this.homeService.getSectors$.subscribe((sector: any) => {
-      this._sector = sector;
-      this._sectorFilter = sector;
+      this._sector = sector as Sectors;
+      this._sectorFilter = sector as Sectors;
+      console.log('this._sectorFilter = ', this._sectorFilter);
+      console.log('this._sector = ', this._sector);
     });
     this.homeService.getSectorId$.subscribe((sectorId: string) => {
       if (sectorId === '1') {

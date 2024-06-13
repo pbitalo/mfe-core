@@ -15,11 +15,10 @@ export class HeaderComponent extends HomeBase {
   protected _form: FormGroup = new FormGroup({});
   private _formBuilder = new FormBuilder();
 
-  sector: Sector[] = [
-    { value: 'all', viewValue: 'Todos', id: '1' },
-    { value: 'contabilidade', viewValue: 'Contabilidade', id: '2' },
-    { value: 'administrativo', viewValue: 'Administrativo', id: '3' },
-  ];
+  protected _sector: any = [];
+  protected _sectorFilter: any = [];
+
+  sector: Sector[] = [];
 
   override ngOnInit(): void {
     super.ngOnInit();
@@ -27,10 +26,27 @@ export class HeaderComponent extends HomeBase {
     this.homeService.getUser$.subscribe(
       (user: UserEntity) => (this._user = user)
     );
+    this.homeService.getSectors$.subscribe((sector: any) => {
+      this.generateListSectors(sector);
+      this._sectorFilter = sector;
+    });
     this._form.patchValue({
       sectorId: '1',
     });
     this.createListeners();
+  }
+
+  generateListSectors(sector: any): void {
+    sector.forEach((item: any, index: number) => {
+      this.sector.push({
+        value: item.name,
+        viewValue: item.name,
+        id: index + 2,
+      });
+    });
+    if (this.sector[0]?.viewValue !== 'Todos') {
+      this.sector.unshift({ value: 'all', viewValue: 'Todos', id: '1' });
+    }
   }
 
   createListeners() {

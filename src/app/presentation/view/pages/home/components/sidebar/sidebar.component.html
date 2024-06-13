@@ -18,32 +18,14 @@
               <span *ngIf="!isOpen" class="c-description">
                 {{ item.name }}
               </span>
+
               <app-list-options
                 *ngIf="item.options"
-                [name]="'Automações'"
+                [name]="'Opções'"
                 [icon]="item.icon"
                 [list]="item.options"
                 [item]="item"
-              >
-              </app-list-options>
-
-              <app-list-options
-                *ngIf="item.setting"
-                [name]="'Configurações'"
-                [icon]="item.icon"
-                [list]="item.setting"
-                [item]="item"
-              >
-              </app-list-options>
-
-              <app-list-options
-                *ngIf="item.tests"
-                [name]="'Testes'"
-                [icon]="item.icon"
-                [list]="item.tests"
-                [item]="item"
-              >
-              </app-list-options>
+              ></app-list-options>
             </div>
           </li>
         </ul>
