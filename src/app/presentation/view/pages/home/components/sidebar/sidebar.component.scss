@@ -40,12 +40,6 @@
           flex-direction: column;
           margin-bottom: toRem(24);
           width: 100%;
-          .c-description {
-            @include insert-flex();
-            width: 100%;
-            color: rgb(220, 220, 220);
-            text-transform: uppercase;
-          }
           app-list-options {
             position: relative;
             width: 100%;
@@ -64,12 +58,13 @@
   transform: rotateZ(90deg);
 }
 
+.icon {
+  color: white;
+}
+
 @media (max-width: $break-point) {
   .icon {
     pointer-events: none;
     cursor: not-allowed;
-  }
-  .c-description {
-    display: none !important;
   }
 }

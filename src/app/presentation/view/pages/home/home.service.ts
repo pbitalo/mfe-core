@@ -19,7 +19,7 @@ export class HomeService {
   private _isSideBarOpen = new BehaviorSubject<boolean>(false);
   public isSideBarOpen$ = this._isSideBarOpen.asObservable();
 
-  private _sectors = new BehaviorSubject<Array<Sectors>>([]); // tipar
+  private _sectors = new BehaviorSubject<Array<Sectors>>([]);
   public getSectors$ = this._sectors.asObservable();
 
   private _sectorId = new BehaviorSubject<string>('');

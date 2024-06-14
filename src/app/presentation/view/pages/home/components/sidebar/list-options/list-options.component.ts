@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { SidebarEnum } from 'src/app/domain/enums/sidebar-enum';
 import { HomeBase } from '../../../home-base';
 import { HomeService } from '../../../home.service';
 
@@ -18,13 +17,9 @@ type options = {
 })
 export class ListOptionsComponent extends HomeBase {
   private _break_point = 650;
-
   @Input() public name = '';
-
   @Input() public icon = '';
-
   @Input() public item: any;
-
   @Input() public list: Array<options> = new Array<options>();
 
   constructor(
@@ -41,34 +36,7 @@ export class ListOptionsComponent extends HomeBase {
   }
 
   open() {
-    console.log('');
-    this.item.isOptionsOpen = !this.item.isOptionsOpen;
-  }
-
-  isBlockOpen(): boolean {
-    if (this.item.isOptionsOpen && this.name === SidebarEnum.automacoes) {
-      return true;
-    }
-    if (this.item.isSettingOpen && this.name === SidebarEnum.configuracoes) {
-      return true;
-    }
-    if (this.item.isSettingOpen && this.name === SidebarEnum.testes) {
-      return true;
-    }
-    return false;
-  }
-
-  getHeight() {
-    if (!this.item.isOptionsOpen && this.name === SidebarEnum.automacoes) {
-      return 0;
-    }
-    if (!this.item.isSettingOpen && this.name === SidebarEnum.configuracoes) {
-      return 0;
-    }
-    if (!this.item.isTestsOpen && this.name === SidebarEnum.testes) {
-      return 0;
-    }
-    return this.list.length ? `${this.list.length * 40}px` : 0;
+    this.item.isOpen = !this.item.isOpen;
   }
 
   redirect(item: any, $event: any) {
@@ -78,17 +46,20 @@ export class ListOptionsComponent extends HomeBase {
     }
   }
 
-  // getText(): string {
-  //   if (this.name === SidebarEnum.automacoes) {
-  //     return 'Opções';
-  //   }
-  //   if (
-  //     this.name === SidebarEnum.configuracoes ||
-  //     this.name === SidebarEnum.testes
-  //   ) {
-  //     return 'Lista';
-  //   }
+  get isBlockOpen(): boolean {
+    return this.item.isOpen;
+  }
 
-  //   return '';
-  // }
+  get getHeight(): string {
+    return this.item.isOpen && this.list.length
+      ? `${this.list.length * 40}px`
+      : '0';
+  }
+
+  get getPadding(): string {
+    if (!this.item.isOpen) {
+      return '0';
+    }
+    return '12px 0';
+  }
 }

@@ -10,6 +10,7 @@ $icon-center: 3px;
   @include insert-flex("center", "flex-start");
   flex-direction: column;
   margin-bottom: toRem(16);
+  user-select: none;
   .c-item {
     position: relative;
     width: 100%;
@@ -18,9 +19,10 @@ $icon-center: 3px;
     cursor: pointer;
     .icon-row {
       @include transition();
+      transform: rotateZ(90deg);
     }
     .move-icon {
-      transform: rotateZ(90deg);
+      transform: rotateZ(270deg);
     }
     span {
       @include insert-flex();
@@ -115,7 +117,7 @@ $icon-center: 3px;
 }
 
 @media (max-width: $break-point) {
-  :is(.c-label-auto, .c-description) {
+  :is(.c-label-auto) {
     display: none !important;
   }
 

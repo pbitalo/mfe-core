@@ -10,9 +10,39 @@
       "uuid": "fsdg6fd8g7d6f",
       "name": "Usuário(s)",
       "icon": "settings",
-      "isOptionsOpen": false,
-      "isSettingOpen": false,
-      "isTestsOpen": false,
+      "isOpen": false,
+      "options": [
+        {
+          "uuid": "dhasgd76g12d",
+          "name": "Criar",
+          "route": "/home/invoicing",
+          "icon": "token"
+        },
+        {
+          "uuid": "ydha7sd8ga76s",
+          "name": "Editar",
+          "route": "/home/accountancy",
+          "icon": "sync"
+        },
+        {
+          "uuid": "ydha7sd8ga76s",
+          "name": "Visualizar",
+          "route": "/home/invoicing",
+          "icon": "autorenew"
+        },
+        {
+          "uuid": "ydha7sd8ga76s",
+          "name": "Deletar",
+          "route": "/home/accountancy",
+          "icon": "sync"
+        }
+      ]
+    },
+    {
+      "uuid": "fsdg6fd8g7d6f",
+      "name": "Evento(s)",
+      "icon": "settings",
+      "isOpen": false,
       "options": [
         {
           "uuid": "dhasgd76g12d",

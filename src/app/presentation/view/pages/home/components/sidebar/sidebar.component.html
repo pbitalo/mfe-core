@@ -13,15 +13,11 @@
     <section class="sidebar-menu">
       <article>
         <ul>
-          <li *ngFor="let item of _sectorFilter">
+          <li *ngFor="let item of filterSectors">
             <div class="c-sector">
-              <span *ngIf="!isOpen" class="c-description">
-                {{ item.name }}
-              </span>
-
               <app-list-options
                 *ngIf="item.options"
-                [name]="'Opções'"
+                [name]="item.name"
                 [icon]="item.icon"
                 [list]="item.options"
                 [item]="item"

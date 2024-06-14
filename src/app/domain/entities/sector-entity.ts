@@ -9,7 +9,7 @@ export interface Sectors {
   uuid: string;
   name: string;
   icon: string;
-  isOptionsOpen: string;
+  isOpen: string;
   options: Array<ItemSector>;
 }
 
