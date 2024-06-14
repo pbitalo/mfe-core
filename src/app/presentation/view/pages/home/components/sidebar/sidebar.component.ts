@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { HomeBase } from '../../home-base';
-import { SectorName } from 'src/app/domain/enums/sidebar-enum';
+import { Sectors } from '@entities/sector-entity';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,33 +9,23 @@ import { SectorName } from 'src/app/domain/enums/sidebar-enum';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent extends HomeBase {
-  protected _sector: any = [];
-  protected _sectorFilter: any = [];
+  protected _sectors: Array<Sectors> = [];
+  protected _sectorId: string | number = '1';
 
   override ngOnInit(): void {
     super.ngOnInit();
-    this.homeService.getSectors$.subscribe((sector: any) => {
-      this._sector = sector;
-      this._sectorFilter = sector;
+    this.homeService.getSectors$.subscribe((sector: Array<Sectors>) => {
+      this._sectors = sector;
     });
     this.homeService.getSectorId$.subscribe((sectorId: string) => {
-      if (sectorId === '1') {
-        this._sectorFilter = this._sector;
-      }
-      if (sectorId === '2') {
-        this._sectorFilter = [this.findSector(SectorName.contabilidade)];
-      }
-      if (sectorId === '3') {
-        this._sectorFilter = [this.findSector(SectorName.administrativo)];
-      }
+      this._sectorId = sectorId;
     });
   }
 
-  findSector(sectorName: string) {
-    return this._sector.find((item: any) => {
-      if (item.name === sectorName) {
-        return item;
-      }
-    });
+  get filterSectors(): any {
+    if (this._sectors.length > 0 && +this._sectorId > 1) {
+      return [this._sectors[+this._sectorId - 2]];
+    }
+    return this._sectors;
   }
 }

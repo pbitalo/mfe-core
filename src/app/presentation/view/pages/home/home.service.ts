@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { UserEntity, UserPermissions } from '@entities/user-entity';
+import { Sectors } from '@entities/sector-entity';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class HomeService {
   private _isSideBarOpen = new BehaviorSubject<boolean>(false);
   public isSideBarOpen$ = this._isSideBarOpen.asObservable();
 
-  private _sectors = new BehaviorSubject<Array<any>>([]); // tipar
+  private _sectors = new BehaviorSubject<Array<Sectors>>([]);
   public getSectors$ = this._sectors.asObservable();
 
   private _sectorId = new BehaviorSubject<string>('');

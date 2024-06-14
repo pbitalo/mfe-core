@@ -1,0 +1,20 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$mfe-core-primary: mat.define-palette(mat.$indigo-palette);
+$mfe-core-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$mfe-core-warn: mat.define-palette(mat.$red-palette);
+
+$mfe-core-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $mfe-core-primary,
+      accent: $mfe-core-accent,
+      warn: $mfe-core-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($mfe-core-theme);

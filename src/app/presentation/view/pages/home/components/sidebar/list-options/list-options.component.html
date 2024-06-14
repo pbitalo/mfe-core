@@ -1,17 +1,18 @@
 <section class="c-options" (click)="open()" (window:resize)="onResize($event)">
   <div class="c-item">
     <span>
-      <mat-icon class="icon-sidebar" matTooltip="{{ name }}">{{ icon }}</mat-icon>
+      <mat-icon class="icon-sidebar" matTooltip="{{ name }}">{{
+        icon
+      }}</mat-icon>
       <label *ngIf="!isOpen" class="c-label-auto">{{ name }}</label>
     </span>
 
-    <span class="icon-row" [ngClass]="{ 'move-icon': isBlockOpen() }">
+    <span class="icon-row" [ngClass]="{ 'move-icon': !isBlockOpen }">
       <mat-icon class="icon-sidebar">chevron_right</mat-icon>
     </span>
   </div>
 
-  <div class="c-list" [ngStyle]="{ height: getHeight() }">
-    <label for="">{{ getText() }}</label>
+  <div class="c-list" [ngStyle]="{ height: getHeight, padding: getPadding }">
     <span
       *ngFor="let item of list"
       class="c-list-item"

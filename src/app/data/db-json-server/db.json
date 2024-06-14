@@ -8,104 +8,66 @@
   "sectors": [
     {
       "uuid": "fsdg6fd8g7d6f",
-      "name": "contabilidade",
+      "name": "Usuário(s)",
       "icon": "settings",
-      "isOptionsOpen": false,
-      "isSettingOpen": false,
-      "isTestsOpen": false,
+      "isOpen": false,
       "options": [
         {
           "uuid": "dhasgd76g12d",
-          "name": "Fat 1",
+          "name": "Criar",
           "route": "/home/invoicing",
           "icon": "token"
         },
         {
           "uuid": "ydha7sd8ga76s",
-          "name": "automation 2",
+          "name": "Editar",
           "route": "/home/accountancy",
           "icon": "sync"
         },
         {
           "uuid": "ydha7sd8ga76s",
-          "name": "automation 3",
+          "name": "Visualizar",
           "route": "/home/invoicing",
           "icon": "autorenew"
         },
         {
           "uuid": "ydha7sd8ga76s",
-          "name": "automation 4",
+          "name": "Deletar",
           "route": "/home/accountancy",
           "icon": "sync"
-        }
-      ],
-      "setting": [
-        {
-          "uuid": "dhasgd76g12d",
-          "name": "setting 1",
-          "route": "/home/invoicing",
-          "icon": "change_circle"
-        },
-        {
-          "uuid": "ydha7sd8ga76s",
-          "name": "setting 2",
-          "route": "/home/accountancy",
-          "icon": "token"
-        },
-        {
-          "uuid": "ydha7sd8ga76s",
-          "name": "setting 3",
-          "route": "/home/accountancy",
-          "icon": "change_circle"
-        }
-      ],
-      "tests": [
-        {
-          "uuid": "bfdb4b4b4",
-          "name": "test 1",
-          "route": "/home/invoicing",
-          "icon": "change_circle"
-        },
-        {
-          "uuid": "45f4f4f45t4",
-          "name": "tes 2",
-          "route": "/home/accountancy",
-          "icon": "token"
-        },
-        {
-          "uuid": "5g65g56g576g765",
-          "name": "tes 3",
-          "route": "/home/accountancy",
-          "icon": "change_circle"
         }
       ]
     },
     {
       "uuid": "fsdg6fd8g7d6f",
-      "name": "administrativo",
-      "icon": "apps",
-      "isOptionsOpen": false,
-      "isSettingOpen": false,
+      "name": "Evento(s)",
+      "icon": "settings",
+      "isOpen": false,
       "options": [
         {
-          "uuid": "g5yh6778j67",
-          "name": "automation 3",
+          "uuid": "dhasgd76g12d",
+          "name": "Criar",
           "route": "/home/invoicing",
-          "icon": "face"
+          "icon": "token"
         },
         {
-          "uuid": "h76j8mnv78",
-          "name": "automation 4",
+          "uuid": "ydha7sd8ga76s",
+          "name": "Editar",
           "route": "/home/accountancy",
-          "icon": "menu"
+          "icon": "sync"
         },
-        { "uuid": "ciuyfg9s8a7dga7s6", "name": "automation 5", "route": "", "icon": "face" },
-        { "uuid": "da7sd8gad67gass", "name": "automation 6", "route": "", "icon": "menu" }
-      ],
-      "setting": [
-        { "uuid": "dhasgd76g12d", "name": "setting 1", "route": "", "icon": "change_circle" },
-        { "uuid": "ydha7sd8ga76s", "name": "setting 2", "route": "", "icon": "token" },
-        { "uuid": "ydha7sd8ga76s", "name": "setting 3", "route": "", "icon": "change_circle" }
+        {
+          "uuid": "ydha7sd8ga76s",
+          "name": "Visualizar",
+          "route": "/home/invoicing",
+          "icon": "autorenew"
+        },
+        {
+          "uuid": "ydha7sd8ga76s",
+          "name": "Deletar",
+          "route": "/home/accountancy",
+          "icon": "sync"
+        }
       ]
     }
   ]
