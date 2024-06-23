@@ -4,15 +4,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Sector } from '@entities/sector-entity';
 import { UserEntity, UserPermissions } from '@entities/user-entity';
 import { HomeBase } from '../../home-base';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent extends HomeBase {
   protected _user: UserEntity | undefined;
-  protected _form: FormGroup = new FormGroup({});
+  public _form: FormGroup = new FormGroup({});
   private _formBuilder = new FormBuilder();
 
   protected _sector: any = [];

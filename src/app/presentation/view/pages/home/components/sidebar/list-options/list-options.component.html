@@ -1,14 +1,16 @@
 <section class="c-options" (click)="open()" (window:resize)="onResize($event)">
   <div class="c-item">
     <span>
-      <mat-icon class="icon-sidebar" matTooltip="{{ name }}">{{
+      <!-- <mat-icon class="icon-sidebar" matTooltip="{{ name }}">{{
         icon
-      }}</mat-icon>
+      }}</mat-icon> -->
+      ICONE
       <label *ngIf="!isOpen" class="c-label-auto">{{ name }}</label>
     </span>
 
     <span class="icon-row" [ngClass]="{ 'move-icon': !isBlockOpen }">
-      <mat-icon class="icon-sidebar">chevron_right</mat-icon>
+      <!-- <mat-icon class="icon-sidebar">chevron_right</mat-icon> -->
+      ICONE
     </span>
   </div>
 
@@ -20,7 +22,8 @@
       [ngClass]="{ 'center-icons': isOpen }"
     >
       <span>
-        <mat-icon class="icon">{{ item.icon }}</mat-icon>
+        <!-- <mat-icon class="icon">{{ item.icon }}</mat-icon> -->
+        ICONE
         <span *ngIf="!isOpen" class="c-option-name">{{ item.name }}</span>
       </span>
     </span>

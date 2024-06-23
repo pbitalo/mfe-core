@@ -1,0 +1,24 @@
+@import "home-theme";
+@import "customers-theme";
+@import "users-theme";
+
+@mixin generate-theme-map($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}
+
+:root.home * {
+  @include generate-theme-map($home-theme-map);
+  transition: background-color 1s !important;
+}
+
+:root.users * {
+  @include generate-theme-map($users-theme-map);
+  transition: background-color 1s !important;
+}
+
+:root.customers * {
+  @include generate-theme-map($customers-theme-map);
+  transition: background-color 1s !important;
+}

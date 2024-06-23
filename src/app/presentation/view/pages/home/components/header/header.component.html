@@ -1,20 +1,20 @@
 <header class="header-container" [ngClass]="{ 'retract-header': isOpen }">
   <nav>
-    <section class="field-search" [formGroup]="_form">
-      <mat-form-field appearance="fill" *ngIf="isAdminUser">
+    <!-- [formGroup]="_form" -->
+    <section class="field-search">
+      AABBBCC
+      <!-- <mat-form-field appearance="fill" *ngIf="isAdminUser">
         <mat-label>Setor</mat-label>
         <mat-select formControlName="sectorId">
           <mat-option *ngFor="let item of sector" [value]="item.id">
             {{ item.viewValue }}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     </section>
     <section class="field-options">
-      <div
-        class="c-avatar"
-        matTooltip="{{ _user?.name }} ( {{ _user?.permission }} )"
-      >
+      <!-- matTooltip="{{ _user?.name }} ( {{ _user?.permission }} )" -->
+      <div class="c-avatar">
         <img
           src="/assets/icons/LogoIpbTech.svg"
           alt="logo IPB Tech"
@@ -23,7 +23,7 @@
         />
         <hr />
         <span class="c-user-name">{{ _user?.name }}</span>
-        <mat-icon class="icon-face">face</mat-icon>
+        <!-- <mat-icon class="icon-face">face</mat-icon> -->
       </div>
     </section>
   </nav>
