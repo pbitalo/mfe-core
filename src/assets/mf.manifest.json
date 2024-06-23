@@ -1,0 +1,4 @@
+{
+  "users": "http://localhost:4251/remoteEntry.js",
+  "customers": "http://localhost:4052/remoteEntry.js"
+}

@@ -1,13 +1,20 @@
 <aside class="sidebar-container" [ngClass]="{ 'retract-sidebar': isOpen }">
   <nav>
     <header class="sidebar-header">
-      <mat-icon
+      <!-- <mat-icon
         (click)="toogleSidebar()"
         class="icon"
         matTooltip="Clique para expandir/retrair"
         [ngClass]="{ 'move-icon': isOpen }"
         >menu</mat-icon
+      > -->
+      <div
+        (click)="toogleSidebar()"
+        class="icon"
+        [ngClass]="{ 'move-icon': isOpen }"
       >
+        menu
+      </div>
     </header>
 
     <section class="sidebar-menu">

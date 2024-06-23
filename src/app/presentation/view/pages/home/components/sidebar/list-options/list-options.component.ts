@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { HomeBase } from '../../../home-base';
 import { HomeService } from '../../../home.service';
@@ -12,6 +13,8 @@ type options = {
 
 @Component({
   selector: 'app-list-options',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './list-options.component.html',
   styleUrls: ['./list-options.component.scss'],
 })

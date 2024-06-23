@@ -4,7 +4,6 @@
     "name": "Ítalo Pereira de Brito",
     "permission": "ADMIN"
   },
-
   "sectors": [
     {
       "uuid": "fsdg6fd8g7d6f",
@@ -13,59 +12,59 @@
       "isOpen": false,
       "options": [
         {
-          "uuid": "dhasgd76g12d",
+          "uuid": "nhjkfh",
           "name": "Criar",
-          "route": "/home/invoicing",
+          "route": "/users/insert",
           "icon": "token"
         },
         {
-          "uuid": "ydha7sd8ga76s",
+          "uuid": "fdg54g3",
           "name": "Editar",
-          "route": "/home/accountancy",
+          "route": "/users/update",
           "icon": "sync"
         },
         {
-          "uuid": "ydha7sd8ga76s",
+          "uuid": "bun67",
           "name": "Visualizar",
-          "route": "/home/invoicing",
+          "route": "/users/list",
           "icon": "autorenew"
         },
         {
-          "uuid": "ydha7sd8ga76s",
+          "uuid": "n6767u",
           "name": "Deletar",
-          "route": "/home/accountancy",
+          "route": "/users/delete",
           "icon": "sync"
         }
       ]
     },
     {
-      "uuid": "fsdg6fd8g7d6f",
-      "name": "Evento(s)",
+      "uuid": "btynuykfg",
+      "name": "Cliente(s)",
       "icon": "settings",
       "isOpen": false,
       "options": [
         {
-          "uuid": "dhasgd76g12d",
+          "uuid": "j87o5r",
           "name": "Criar",
-          "route": "/home/invoicing",
+          "route": "/customers/insert",
           "icon": "token"
         },
         {
-          "uuid": "ydha7sd8ga76s",
+          "uuid": "hfgj686",
           "name": "Editar",
-          "route": "/home/accountancy",
+          "route": "/customers/update",
           "icon": "sync"
         },
         {
-          "uuid": "ydha7sd8ga76s",
+          "uuid": "hgjgh75343e",
           "name": "Visualizar",
-          "route": "/home/invoicing",
+          "route": "/customers/list",
           "icon": "autorenew"
         },
         {
-          "uuid": "ydha7sd8ga76s",
+          "uuid": "drhgj7865ersg",
           "name": "Deletar",
-          "route": "/home/accountancy",
+          "route": "/customers/delete",
           "icon": "sync"
         }
       ]

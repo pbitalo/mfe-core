@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { Sectors } from '@entities/sector-entity';
 
 import { HomeBase } from '../../home-base';
-import { Sectors } from '@entities/sector-entity';
+import { ListOptionsComponent } from './list-options/list-options.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-sidebar',
+  standalone: true,
+  imports: [CommonModule, ListOptionsComponent, HeaderComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
